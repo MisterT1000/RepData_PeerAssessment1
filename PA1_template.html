@@ -170,6 +170,7 @@ plot(AMDavg, type=&quot;l&quot;, ylab = &quot;Average Steps By Interval&quot;, x
 </ol>
 <pre class="r"><code>sum(is.na(AMD$steps))</code></pre>
 <pre><code>## [1] 2304</code></pre>
+<p>The missing values are filled in with the mean for the 5-minute interval.</p>
 <pre class="r"><code>AMD2 &lt;- AMD
 AMDavg2 &lt;- rep(AMDavg$x,61)
 AMD2$steps[is.na(AMD2$steps)] &lt;- as.integer(AMDavg2)[is.na(AMD$steps)]

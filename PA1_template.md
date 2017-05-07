@@ -45,6 +45,7 @@ summary(AMDagg)
 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
+
 ```r
 AMDavg <- aggregate(AMD$steps, by = list(AMD$interval), FUN = mean, na.rm = TRUE)
 plot(AMDavg, type="l", ylab = "Average Steps By Interval", xlab = "All Days")
@@ -66,7 +67,7 @@ sum(is.na(AMD$steps))
 ```
 ## [1] 2304
 ```
-
+The missing values are filled in with the mean for the 5-minute interval.
 
 ```r
 AMD2 <- AMD
